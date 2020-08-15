@@ -1,54 +1,50 @@
-body {
-	font-family: Verdana;
-	
+body
+{
+	font-family: "Verdana";
 }
 
-
-.menu
+#container
 {
 	width: 30%;
-	margin : 300px auto;
+	margin : 100px auto;
+	padding: 10px;
+}
+
+#menu
+{
+	width: 100%;
 
 	display: grid;
-	padding: 10px;
 
-}
-
-#input
-{
+	grid-template-columns: 80% 20%;
+	height: 60px;
 	margin-bottom: 10px;
-	border: 1px solid black;
-	height: 1.8em;
-	padding-left: 15px;
 }
 
-#btn
+input
 {
-	font-size: 1.75em;
-	line-height: 1.75em;
-}
-
-#input
-{
+	padding-left: 10px;
+	margin-right: 10px;
 	font-size: 2em;
+}
+
+button
+{
+	font-size: 1.3vw;
+	text-align: center;
+	font-weight: bold;
+	padding : 10px 15px;
+	background-color: #5574a9;
+	border: none;
+	box-shadow: 0px 0px 2px 1px black;
+	color: white;
 }
 
 #description
 {
-	line-height: 30px;
-	margin-top: 10px;
-	padding-top: 20px;
-	padding-bottom : 20px;
-	padding-left : 15px;
-	font-size: 1.5em;
-
-	background-color : rgba(0,0,0,0.6);
-	color : white;
-	min-height: 30px;
-}
-
-
-img
-{
-	width: 100px;
+	border: 1px solid black;
+	width: 80%;
+	margin: 0px auto;
+	padding: 0px 20px;
+	font-size: 1.2vw;
 }
