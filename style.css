@@ -42,9 +42,32 @@ button
 
 #description
 {
-	border: 1px solid black;
-	width: 80%;
+
+	color: white;
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 20px;
+	width: 50%;
 	margin: 0px auto;
-	padding: 0px 20px;
-	font-size: 1.2vw;
+	padding: 10px 30px;
+	font-size: 1.4vw;
+	visibility: hidden;
+}
+
+img
+{
+	float : right;
+	margin-top: -15px;
+	color : red;
+	font-family: "Verdana";
+}
+
+.degree
+{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.info
+{
+	font-style: italic;
 }
