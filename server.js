@@ -11,13 +11,40 @@ app.post("/call", async (req, res) => {
 
 	let cityName = req.body.city;
 
+	let data = {};
+
 	console.log(req.body);
 
-	let urlImage = "https://api.unsplash.com/search/photos/?client_id=", keyImage = "c2BDCKJ6tVIDatSz2zPZT90e3rJpU_wytclJbGZ4zMo";
-	urlImage += keyImage + "&page=1&per_page=1&query=" + cityName;
+	
+	//forecast
+	let keyForecast = "e9b96acc72c0c1b9df8d81936190b1e3";
+	let urlForecast = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${keyForecast}`;
 
-	let response = await fetch(urlImage);
-	let data = await response.json();
+	let response = await fetch(urlForecast);
+	let json = await response.json();
+
+	console.log(json);
+
+	if(json.cod == 200)
+	{
+		data.name = json.name;
+		data.celcius = (json.main.temp - 273).toFixed(1);
+		data.countryId = json.sys.country;
+		data.iconId = json.weather[0].id;
+		data.info = json.weather[0].description;
+	}
+
+	data.cod = json.cod;
+
+
+	//background color
+	let keyImage = "c2BDCKJ6tVIDatSz2zPZT90e3rJpU_wytclJbGZ4zMo";
+	let urlImage = `https://api.unsplash.com/search/photos/?client_id=${keyImage}&page=1&per_page=1&query=${cityName}`; 
+
+	response = await fetch(urlImage);
+	json = await response.json();
+
+	data.url = json.results[0].urls.full
 
 	res.json(data);
 
