@@ -5,14 +5,6 @@ let test = () => console.log("yeyyy...");
 document.querySelector('button').addEventListener("click", event => test());
 */
 
-async function processData(response)
-{
-	console.log(response);
-	let data = await response.json();
-
-	console.log(data);
-}
-
 
 
 function sendData(city)
@@ -22,7 +14,7 @@ function sendData(city)
 	let data = {};
 	data.city = city;
 
-	fetch("/", {
+	fetch("/asd", {
 		method: "POST",
 		body: JSON.stringify(data),
 		headers: {
@@ -31,8 +23,6 @@ function sendData(city)
 	})
 	.then(response => response.json())
 	.then(response => console.log(response));
-
-	processData(response);
 
 }
 
@@ -44,7 +34,7 @@ const button = document.querySelector("button");
 const input = document.querySelector("input");
 
 button.addEventListener("click", () => {
-		return sendData(input.value);
+	return sendData(input.value);
 });
 
 
