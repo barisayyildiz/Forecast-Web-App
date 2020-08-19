@@ -1,5 +1,6 @@
 const express = require("express");
 const fetch = require("node-fetch");
+require('dotenv').config();
 const app = express();
 app.listen(3000, () => console.log("listening at 3000..."));
 
@@ -17,7 +18,7 @@ app.post("/call", async (req, res) => {
 
 	
 	//forecast
-	let keyForecast = "e9b96acc72c0c1b9df8d81936190b1e3";
+	let keyForecast = process.env.keyForecast;
 	let urlForecast = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${keyForecast}`;
 
 	let response = await fetch(urlForecast);
@@ -38,7 +39,7 @@ app.post("/call", async (req, res) => {
 
 
 	//background color
-	let keyImage = "c2BDCKJ6tVIDatSz2zPZT90e3rJpU_wytclJbGZ4zMo";
+	let keyImage = process.env.keyImage;
 	let urlImage = `https://api.unsplash.com/search/photos/?client_id=${keyImage}&page=1&per_page=1&query=${cityName}`; 
 
 	response = await fetch(urlImage);

@@ -8,3 +8,8 @@ I developed a forecast web app with using OpenWeatherMap, Unsplash and CountryFl
 [Unsplash API](https://unsplash.com/developers)
 [CountryFlags API](https://www.countryflags.io/)
 [Owfont](https://websygen.github.io/owfont/#usage)
+
+## Environment Variables
+
+keyForecast,	 OpenWeather API Key
+keyImage, 		 Unsplash API Key
