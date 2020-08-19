@@ -1,40 +1,32 @@
-/*
-let test = () => console.log("yeyyy...");
-
-
-document.querySelector('button').addEventListener("click", event => test());
-*/
-
-
 
 function sendData(city)
 {
-	console.log("only on click event...");
+	let data = {city: city};
 
-	let data = {};
-	data.city = city;
+	console.log(city);
+	console.log(data);
 
-	fetch("/asd", {
+	fetch("/call", {
 		method: "POST",
 		body: JSON.stringify(data),
+		//this is very important !!!
+		//else it will send an empty body !!!
 		headers: {
 			'Content-Type' : "application/json"
 		}
 	})
 	.then(response => response.json())
-	.then(response => console.log(response));
+	.then(data => console.log(data));
 
 }
 
 
-//onclick and 'enter' events...
-document.querySelector('button').addEventListener("click", event => sendData());
 
 const button = document.querySelector("button");
 const input = document.querySelector("input");
 
 button.addEventListener("click", () => {
-	return sendData(input.value);
+		return sendData(input.value);
 });
 
 
