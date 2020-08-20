@@ -2,7 +2,7 @@
 
 [Live Demo]()
 
-I developed a forecast web app with using OpenWeatherMap, Unsplash and CountryFlag API's. And owfont (OpenWeatherFont) for the icons. I used OpenWeatherMap for the data, Unsplash for the background images, CountrFlag for the country flags.
+I developed a weather forecast web app with using OpenWeatherMap, Unsplash and CountryFlag API's. And owfont (OpenWeatherFont) for the icons. I used OpenWeatherMap for the data, Unsplash for the background images, CountrFlag for the country flags.
 
 [OpenWeatherMap API](https://openweathermap.org/api)\
 [Unsplash API](https://unsplash.com/developers)\
@@ -11,5 +11,5 @@ I developed a forecast web app with using OpenWeatherMap, Unsplash and CountryFl
 
 ## Environment Variables
 
-keyForecast : OpenWeather API Key\
+keyWeather : OpenWeather API Key\
 keyImage : Unsplash API Key

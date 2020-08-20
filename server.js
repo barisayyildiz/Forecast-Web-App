@@ -14,17 +14,13 @@ app.post("/call", async (req, res) => {
 
 	let data = {};
 
-	console.log(req.body);
-
 	
-	//forecast
-	let keyForecast = process.env.keyForecast;
-	let urlForecast = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${keyForecast}`;
+	//weather forecast
+	let keyWeather = process.env.keyWeather;
+	let urlWeather = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${keyWeather}`;
 
-	let response = await fetch(urlForecast);
+	let response = await fetch(urlWeather);
 	let json = await response.json();
-
-	console.log(json);
 
 	if(json.cod == 200)
 	{
